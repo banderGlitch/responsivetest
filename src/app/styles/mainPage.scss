@@ -328,18 +328,23 @@
       grid-template-columns: 1fr;
     }
   }
-  //pricing section
 
+  //pricing section
+  .pricing {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   .pricing__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 16px;
   }
   .pricing-card {
     max-width: 100%;
-    box-sizing: border-box;
-    // padding: clamp(16px, 3vw, 24px);
+    width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
+    padding: clamp(16px, 3vw, 24px);
   }
   .pricing-card__button {
     width: 100%;
