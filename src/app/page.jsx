@@ -106,11 +106,11 @@ export default function Home() {
         <div className="faq__list">
           <div className="faq__item">
             <div className="faq__question">What is this platform?</div>
-            <div className="faq__answer">It's a responsive web app for modern users.</div>
+            <div className="faq__answer">It&apos;s a responsive web app for modern users.</div>
           </div>
           <div className="faq__item">
             <div className="faq__question">How do I sign up?</div>
-            <div className="faq__answer">Click the "Get Started" button and fill out the form.</div>
+            <div className="faq__answer">Click the &quot;Get Started&quot; button and fill out the form.</div>
           </div>
         </div>
       </section>
