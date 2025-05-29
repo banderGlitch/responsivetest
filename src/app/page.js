@@ -1,95 +1,49 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
+import Layout from "./components/Layout/Layout";
+import "./styles/mainPage.scss";
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  const features = [
+    {
+      title: 'Easy to Use',
+      description: 'Simple and intuitive interface for the best user experience',
+      icon: '🚀'
+    },
+    {
+      title: 'Responsive Design',
+      description: 'Looks great on any device, from mobile to desktop',
+      icon: '📱'
+    },
+    {
+      title: 'Fast Performance',
+      description: 'Optimized for speed and efficiency',
+      icon: '⚡'
+    }
+  ];
+
+
+
+  return (
+    <Layout>
+      <section className="hero">
+        <div className="hero__content">
+          <h1>Welcome to our website</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+          <button>Read More</button>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section className="features">
+      <h2 className="features__title">Our Features</h2>
+      <div className="features__grid">
+        {features.map((feature, index) => (
+          <div key={index} className="feature-card">
+            <div className="feature-card__icon">{feature.icon}</div>
+            <h3 className="feature-card__title">{feature.title}</h3>
+            <p className="feature-card__description">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      </section>
+    </Layout>
   );
 }

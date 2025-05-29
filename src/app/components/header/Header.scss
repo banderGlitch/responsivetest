@@ -1,0 +1,58 @@
+// Variables
+$primary-color: #333;
+$border-color: #ddd;
+$background-color: #f9f9f9;
+$mobile-breakpoint: 600px;
+$container-max-width: 1200px;
+$spacing-unit: 1rem;
+
+// Main styles
+.main {
+  padding: clamp(10px, 2vw, 30px);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .header {
+    text-align: center;
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: clamp(10px, 1.5vw, 25px);
+
+      a {
+        text-decoration: none;
+        color: #333;
+        padding: clamp(8px, 1vw, 15px);
+      }
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 columns on desktop
+    gap: clamp(15px, 2vw, 30px);
+
+    .card {
+      padding: clamp(15px, 2vw, 30px);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+  }
+}
+
+// Mobile styles - only applies when screen is smaller than 600px
+@media screen and (max-width: 600px) {
+  .main {
+    .nav {
+      flex-direction: column; // Stack links vertically
+      align-items: center;
+      gap: clamp(8px, 1vw, 15px);
+    }
+
+    .content {
+      grid-template-columns: 1fr; // Single column on mobile
+      gap: clamp(10px, 1.5vw, 20px);
+    }
+  }
+} 
