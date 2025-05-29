@@ -187,6 +187,10 @@
 }
 
 .team-card {
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
   background: white;
   padding: clamp(20px, 3vw, 30px);
   border-radius: 10px;
@@ -324,6 +328,28 @@
       grid-template-columns: 1fr;
     }
   }
+  //pricing section
+
+
+  .pricing__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .pricing-card {
+    max-width: 100%;
+    box-sizing: border-box;
+    // padding: clamp(16px, 3vw, 24px);
+    margin: 0 auto;
+  }
+  .pricing-card__button {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
+  
 
   // Stats Section
   .stats__grid {
@@ -348,10 +374,17 @@
     word-break: break-word;
     font-size: clamp(0.9rem, 1.2vw, 1rem);
   }
+  .team {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
   .team__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
   }
   .team-card {
+    max-width: 100%;
+    box-sizing: border-box;
     padding: clamp(16px, 3vw, 24px);
   }
   .cta {
@@ -361,8 +394,13 @@
       font-size: 1.1rem;
     }
     &__button {
-      width: 100%;
-      padding: 14px 0;
+        width: 50%;
+        padding: 16px 0;
+        font-size: 1.1rem;
+        border-radius: 30px;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
     }
   }
 }
