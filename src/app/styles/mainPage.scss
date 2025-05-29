@@ -43,7 +43,7 @@
   // Features Section
   .features {
     padding: clamp(40px, 8vw, 80px) clamp(20px, 4vw, 40px);
-    background: #fff;
+    background: #f8f9fa;
   
     &__title {
       text-align: center;
@@ -54,7 +54,7 @@
   
     &__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: clamp(20px, 3vw, 40px);
       max-width: 1200px;
       margin: 0 auto;
@@ -103,7 +103,7 @@
     }
     &__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: clamp(20px, 3vw, 40px);
         max-width: 1200px;
         margin: 0 auto;
@@ -115,6 +115,8 @@
     background: white;
     padding: clamp(20px, 3vw, 30px);
     border-radius: 10px;    
+    width: 100%;
+    overflow-x: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     &:hover {
@@ -144,7 +146,7 @@
 
   }
   
-  // Mobile styles
+
   @media screen and (max-width: 600px) {
     .hero {
       min-height: 50vh;
@@ -154,6 +156,18 @@
             grid-template-columns: 1fr;
         }
     }
+    .testimonials__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-card {
+        max-width: 100%;
+        box-sizing: border-box;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        padding: clamp(12px, 4vw, 20px);
+      }
+      
   
     .features {
       &__grid {
