@@ -1,0 +1,40 @@
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 20px;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 20px;
+    a {
+      color: #fff;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: color 0.2s;
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+    .footer__content {
+      gap: 8px;
+    }
+    .footer__nav {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
