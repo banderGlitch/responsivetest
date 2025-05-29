@@ -20,6 +20,27 @@ export default function Home() {
     }
   ];
 
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      role: "Product Manager",
+      image: "👩",
+      text: "This platform has transformed how we handle our daily operations. The responsive design makes it perfect for our team."
+    },
+    {
+      name: "Mike Chen",
+      role: "Developer",
+      image: "👨",
+      text: "As a developer, I appreciate the clean code and responsive features. It's a pleasure to work with."
+    },
+    {
+      name: "Emma Davis",
+      role: "Designer",
+      image: "👩",
+      text: "The attention to detail in the responsive design is impressive. It looks great on every device."
+    }
+  ]
+
 
 
   return (
@@ -44,6 +65,23 @@ export default function Home() {
         ))}
       </div>
       </section>
+
+      <section className="testimonials">
+      <h2 className="testimonials__title">What Our Users Say</h2>
+      <div className="testimonials__grid">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} className="testimonial-card">
+            <div className="testimonial-card__image">{testimonial.image}</div>
+            <p className="testimonial-card__text">{testimonial.text}</p>
+            <div className="testimonial-card__author">
+              <h3>{testimonial.name}</h3>
+              <p>{testimonial.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
     </Layout>
   );
 }
