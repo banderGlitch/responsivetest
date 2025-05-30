@@ -29,16 +29,6 @@ const Header = () => {
         </div>
       </header>
     </div>
-    // <div className="main">
-    //     <header className="header">
-    //         <h1>Responsive Demo</h1>
-    //         <nav className="nav">
-    //         <a href="#">Home</a>
-    //         <a href="#">About</a>
-    //         <a href="#">Contact</a>
-    //     </nav>
-    // </header>
-    // </div>
   )
 }
 
