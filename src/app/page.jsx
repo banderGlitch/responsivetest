@@ -81,9 +81,26 @@ export default function Home() {
     <Layout>
       <section className="hero">
         <div className="hero__content">
-          <h1>Welcome to our website</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-          <button>Read More</button>
+        <h1 className="hero__title">Transform Your Digital Experience</h1>
+          <p className="hero__subtitle">Discover a powerful platform that combines innovation with simplicity. Built for modern users who demand excellence.</p>
+          <div className="hero__cta">
+            <button className="hero__button hero__button--primary">Get Started</button>
+            <button className="hero__button hero__button--secondary">Learn More</button>
+          </div>
+          <div className="hero__stats">
+            <div className="hero__stat">
+              <span className="hero__stat-number">10K+</span>
+              <span className="hero__stat-label">Active Users</span>
+            </div>
+            <div className="hero__stat">
+              <span className="hero__stat-number">99.9%</span>
+              <span className="hero__stat-label">Uptime</span>
+            </div>
+            <div className="hero__stat">
+              <span className="hero__stat-number">24/7</span>
+              <span className="hero__stat-label">Support</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -152,14 +169,6 @@ export default function Home() {
               </div>
             </div>
           ))}
-          {/* <div className="faq__item">
-              <div className="faq__question">What is this platform?</div>
-              <div className="faq__answer">It&apos;s a responsive web app for modern users.</div>
-            </div>
-            <div className="faq__item">
-              <div className="faq__question">How do I sign up?</div>
-              <div className="faq__answer">Click the &quot;Get Started&quot; button and fill out the form.</div>
-            </div> */}
         </div>
       </section>
       {/* Team Section */}
