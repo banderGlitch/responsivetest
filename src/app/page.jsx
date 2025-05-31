@@ -1,6 +1,13 @@
+'use client'
 import Layout from "./components/Layout/Layout";
 import "./styles/mainPage.scss";
+import { useState } from "react";
+
 export default function Home() {
+
+  const [activeIndex, setActiveIndex] = useState(null);
+
+
 
   const features = [
     {
@@ -40,6 +47,33 @@ export default function Home() {
       text: "The attention to detail in the responsive design is impressive. It looks great on every device."
     }
   ]
+
+  const faqs = [
+    {
+      question: "What is this platform?",
+      answer: "It's a responsive web app for modern users."
+    },
+    {
+      question: "How do I sign up?",
+      answer: "Click the &quot;Get Started&quot; button and fill out the form."
+    },
+    {
+      question: "What payment methods do you accept?",
+      answer: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers. All payments are processed securely through our payment partners."
+    },
+    {
+      question: "Can I cancel my subscription anytime?",
+      answer: "Yes, you can cancel your subscription at any time. Your access will continue until the end of your current billing period. No refunds are provided for partial months."
+    },
+    {
+      question: "Do you offer a free trial?",
+      answer: "Yes, we offer a 7-day free trial for all new users. You can cancel anytime before the trial ends."
+    }
+  ]
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  }
 
 
 
@@ -104,14 +138,28 @@ export default function Home() {
       <section className="faq">
         <h2 className="faq__title">Frequently Asked Questions</h2>
         <div className="faq__list">
-          <div className="faq__item">
-            <div className="faq__question">What is this platform?</div>
-            <div className="faq__answer">It&apos;s a responsive web app for modern users.</div>
-          </div>
-          <div className="faq__item">
-            <div className="faq__question">How do I sign up?</div>
-            <div className="faq__answer">Click the &quot;Get Started&quot; button and fill out the form.</div>
-          </div>
+          {faqs.map((faq, index) => (
+            <div key={index} className="faq__item">
+              <button
+                className={`faq__question ${activeIndex === index ? 'active' : ''}`}
+                onClick={() => toggleAccordion(index)}
+              >
+                {faq.question}
+                <span className="faq__icon">+</span>
+              </button>
+              <div className={`faq__answer ${activeIndex === index ? 'active' : ''}`}>
+                <p>{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+          {/* <div className="faq__item">
+              <div className="faq__question">What is this platform?</div>
+              <div className="faq__answer">It&apos;s a responsive web app for modern users.</div>
+            </div>
+            <div className="faq__item">
+              <div className="faq__question">How do I sign up?</div>
+              <div className="faq__answer">Click the &quot;Get Started&quot; button and fill out the form.</div>
+            </div> */}
         </div>
       </section>
       {/* Team Section */}
@@ -137,7 +185,7 @@ export default function Home() {
         <p className="cta__subtitle">Join us and experience the difference!</p>
         <button className="cta__button">Sign Up Now</button>
       </section>
-      {/* Footer Section */}
+      {/* Pricing Section */}
       <section className="pricing">
         <h2 className="pricing__title">Choose Your Plan</h2>
         <div className="pricing__grid">
